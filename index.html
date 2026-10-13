@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="BrandRakshak AI — a digital risk protection prototype for reviewing potential brand impersonation.">
+  <title>BrandRakshak AI | Digital Risk Protection</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="BrandRakshak AI home">
+        <img src="assets/logo.svg" alt="" width="38" height="38">
+        <span><strong>BrandRakshak</strong><small>AI DIGITAL DEFENSE</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav">
+        <a class="nav-item active" href="#overview">▦ <span>Overview</span></a>
+        <a class="nav-item" href="#scanner">⌕ <span>Risk assessment</span></a>
+        <a class="nav-item" href="#findings">◈ <span>Threat findings</span></a>
+        <a class="nav-item" href="#how-it-works">◎ <span>How it works</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <div><strong>Prototype mode</strong><small>Using fictional sample data</small></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">SECURITY OPERATIONS / DEMO</div><h1>Digital Risk Overview</h1></div>
+        <span class="demo-pill"><span class="pulse"></span> LIVE DEMO DATA</span>
+      </header>
+
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <div class="eyebrow light">PROTECT YOUR DIGITAL IDENTITY</div>
+          <h2>Spot the fake.<br><span>Protect the real.</span></h2>
+          <p>Review suspicious domains, social profiles, and app listings that may be impersonating your brand.</p>
+          <a class="primary-btn" href="#scanner">＋ Assess a suspicious asset <span>→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="shield">✓</div><div class="orbit-dot dot-one"></div><div class="orbit-dot dot-two"></div>
+          <div class="art-caption">BRAND IDENTITY<br><b>PROTECTED</b></div>
+        </div>
+      </section>
+
+      <section class="metric-grid" aria-label="Demo metrics">
+        <article class="metric-card"><div class="metric-top"><span>Assets reviewed</span><span class="metric-icon blue">◈</span></div><strong id="metric-reviewed">128</strong><small><span class="muted">Demo dataset</span></small></article>
+        <article class="metric-card"><div class="metric-top"><span>High-risk flags</span><span class="metric-icon red">⚑</span></div><strong id="metric-high">12</strong><small><span class="red-text">Requires human review</span></small></article>
+        <article class="metric-card"><div class="metric-top"><span>Medium risk</span><span class="metric-icon amber">◷</span></div><strong id="metric-medium">27</strong><small><span class="muted">Check evidence</span></small></article>
+        <article class="metric-card"><div class="metric-top"><span>Assessment mode</span><span class="metric-icon green">✓</span></div><strong class="mode-value">Rule-based</strong><small><span class="muted">No live feeds connected</span></small></article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel scanner-panel" id="scanner">
+          <div class="panel-heading"><div><div class="eyebrow">QUICK CHECK</div><h3>Assess a digital asset</h3></div><span class="mini-badge">DEMO ENGINE</span></div>
+          <p class="panel-description">Enter a domain or profile URL. The demo checks simple signals and explains its score.</p>
+          <form id="scan-form">
+            <label for="asset-input">Domain or public profile URL</label>
+            <div class="input-row"><input id="asset-input" name="asset" type="text" placeholder="e.g. https://brand-support-example.com" required autocomplete="url"><button type="submit">Assess <span>→</span></button></div>
+            <div class="input-hint">Use a fictional or public URL only. This demo does not visit or scan the URL.</div>
+          </form>
+          <div id="scan-result" class="scan-result hidden" aria-live="polite"></div>
+        </article>
+        <article class="panel how-panel" id="how-it-works">
+          <div class="panel-heading"><div><div class="eyebrow">EXPLAINABLE BY DESIGN</div><h3>Assessment workflow</h3></div></div>
+          <div class="workflow">
+            <div class="workflow-step"><span>01</span><div><b>Collect an indicator</b><p>Record a suspicious domain, profile, or app listing.</p></div></div>
+            <div class="workflow-step"><span>02</span><div><b>Check risk signals</b><p>Look for lookalike wording, urgency terms, and URL anomalies.</p></div></div>
+            <div class="workflow-step"><span>03</span><div><b>Review evidence</b><p>Use the explanation to decide what needs manual verification.</p></div></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel findings-panel" id="findings">
+        <div class="panel-heading findings-heading"><div><div class="eyebrow">INVESTIGATION QUEUE</div><h3>Sample threat findings</h3><p class="panel-description">Fictional records for prototype demonstration.</p></div><button id="export-btn" class="secondary-btn" type="button">↓ Export JSON</button></div>
+        <div class="table-tools"><label class="search-box">⌕ <input id="search-input" type="search" placeholder="Search assets..."></label><select id="risk-filter" aria-label="Filter by risk"><option value="all">All risk levels</option><option value="High">High risk</option><option value="Medium">Medium risk</option><option value="Low">Low risk</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>Digital asset</th><th>Type</th><th>Risk score</th><th>Risk level</th><th>Reason flagged</th></tr></thead><tbody id="findings-body"></tbody></table></div>
+        <div id="empty-state" class="empty-state hidden">No matching records. Try another search or filter.</div>
+        <div class="table-foot"><span id="result-count">Showing sample records</span><span>Demo data · Not a verified threat verdict</span></div>
+      </section>
+      <footer><span>🛡️ BrandRakshak AI</span><span>Digital Risk Protection · Hackathon Prototype</span></footer>
+    </main>
+  </div>
+</body>
+</html>
