@@ -1,8 +1,8 @@
-# BrandRakshak AI 🛡️
+#THREAT LENS 🛡️
 
 **A Digital Risk Protection prototype for detecting possible brand impersonation.**
 
-BrandRakshak AI helps a team review suspicious domains, social profiles, and app listings that may be pretending to represent a legitimate brand. This repository is a **frontend demo** with sample data and explainable, rule-based risk scoring. It does not perform live threat intelligence scans.
+ThreatLens helps a team review suspicious domains, social profiles, and app listings that may be pretending to represent a legitimate brand. This repository is a **frontend demo** with sample data and explainable, rule-based risk scoring. It does not perform live threat intelligence scans.
 
 ## Features
 - Dashboard with sample risk metrics
